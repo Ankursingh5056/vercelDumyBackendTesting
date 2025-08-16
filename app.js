@@ -5,12 +5,14 @@ const app = express();
 const cors = require("cors")
 
 const corsOptions = {
-    origin : process.env.FRONTEND_URL,
+    origin : process.env.FRONTEND_URI,
     methods :['GET','POST','DELETE','UPDATE'],
     allowedHeaders :["Content-Type","Authorization"]
 }
 
 app.use(cors(corsOptions))
+
+// app.use(cors({ origin: "*" }));
 
 // app.use(cors({
 //     origin:"*"
